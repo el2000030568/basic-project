@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body onload="pageveiw()">
+    <div id="page-view">
+        <video id="lock" autoplay loop muted>
+            <source src="vedios/vediokey.mp4" type="video/mp4">
+        </video>
+    </div>
+    <div id="view">
+        <div class="back">
+            <video id="v1" autoplay loop muted><source src="vedios/background.mp4" type="video/mp4"></video>
+         <div class="homescreen1" >
+            
+            <h1 style="color: rgb(255, 255, 255);font-family: 'Tourney', cursive;position: relative;left:-310px;">Are you a fast growing<br>
+                KRR brand looking to <br> disrupt your market?</h1> 
+            <h1 style="color: rgb(255, 255, 255);position: relative;top:200px;">What technology are u looking for?</h1>
+            </div>
+      </div>
+      <section>
+        <div class="homescreen2 reveal" >
+            <h1 style="position: relative;top:-100px;font-size:40px;font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">At Apparel Tech, our mission is to bring<br><span style="margin-left:100px;"> game-changing brands to life</span></h1>
+        </div>
+      </section>
+      <div class="container">
+                <h3 style="color:aqua; width:100px;position: relative;left:20px;top: 15px;" >KRR</h3>
+        <img src="images/comments.png" style="width:25px;position: relative;left:950px;top:-8px" /> 
+       <p style="position: relative;left:990px;top:-40px; color:white;font-size:15px;font-weight:600;width:100px;line-height:12px;">Do you Have any project</p>   
+       <h1 style="position: relative;left:1180px;top:-50px; color:white;font-size:15px;width:100px;line-height:12px;">menu</h1>
+      </div>
+    </div>
+</body>
+<script>
+    function pageveiw(newState){
+       setTimeout(() => { 
+        var x = document.getElementById("view");
+        x.style.display='block';
+        var p = document.getElementById("lock");
+         p.style.display='none'
+         var y = document.getElementById("page-view");
+         y.style.display='none'
+        }, 5000);
+       var x = document.getElementById("view");
+       x.style.display='none';
+}
+function takeclose(){
+    var x = document.getElementById("view");
+    x.style.display='none';
+}
+</script>
+<script type="text/javascript">
+    window.addEventListener('scroll',reveal);
+    function reveal()
+    {
+        var reveals = document.querySelectorAll('.reveal');
+        for(var i=0;i<reveals.length;i++)
+        {
+            var windowheight = window.innerHeight;
+            var revealtop = reveals[i].getBoundingClientRect().top;
+           var revealpoint = 150;
+           if(revealtop < windowheight-revealpoint)
+           {
+            reveals[i].classList.add('active');
+           }
+           else{
+            reveals[i].classList.remove('active');
+           }
+        }
+
+
+    }
+</script>
+</html>
